@@ -15,6 +15,7 @@ class Game:
 
     def start(self):
         self.board.print_board()
+        
         while True:
             # Ask human user move
             move = self.player.get_player_move()
@@ -22,6 +23,7 @@ class Game:
             self.board.submit_move(move, self.player)
             # Print board
             self.board.print_board()
+
             if self.board.is_move_valid(move) and self.board.is_winner(self.player, move[0], move[1]):
                 print("you win!")
                 break
@@ -34,7 +36,7 @@ class Game:
             self.board.print_board()
 
             if self.board.is_winner(self.computer, comp_move[0], comp_move[1]):
-                print("The computer won!")
+                print("The Computer won!")
                 break
 
             comp_move = self.computer.get_computer_move()
